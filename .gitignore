@@ -1,0 +1,38 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.pyc
+*.pkl
+
+# Virtual environment
+venv/
+env/
+.venv/
+
+# Django
+*.log
+db.sqlite3
+/media/
+/static/
+
+# IDE/Editor
+.vscode/
+.idea/
+*.iml
+
+# Setuptools distribution folder
+/uploads/
+/model/
+/logs/
+
+
+# Python egg metadata
+*.egg-info/
+
+# macOS
+.DS_Store
+
+# Windows
+Thumbs.db
