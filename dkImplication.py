@@ -182,11 +182,11 @@ def plot_clusters(points, labels, centers=None, title='Cluster Visualization'):
     plt.show()
 
 
-# 这里labels是DBSCAN的输出
-plot_clusters(features, np.array(dbscan_labels), title='DBSCAN Cluster Result')
+# # 这里labels是DBSCAN的输出
+# plot_clusters(features, np.array(dbscan_labels), title='SRCD_DBSCAN Cluster Result')
 
-# 这里init_centers是srcd_dbscan的输出之一
-plot_clusters(features, np.array(srcd_dbscan_labels), np.array(init_centers), title='Initial Centers for K-means')
+# # 这里init_centers是srcd_dbscan的输出之一
+# plot_clusters(features, np.array(srcd_dbscan_labels), np.array(init_centers), title='Initial Centers for K-means')
 
 # # 这里labels和centers是srcd_dbscan_kmeans的输出
-plot_clusters(features, srcd_dbscan_kmeans_labels, np.array(centers), title='Final K-means Clustering Result')
+plot_clusters(features, srcd_dbscan_kmeans_labels, np.array(centers), title='Final SWO_SRCD_DBSCAN_K-means Clustering Result')

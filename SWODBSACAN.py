@@ -11,6 +11,7 @@ import matplotlib.pyplot as plt
 
 data = pd.read_csv(r"D:\Documents\数据集\车站\车站分类-加上休-线路-处理后.csv")
 X1 = data.iloc[:, [1, 2, 3, 4]].to_numpy()
+# X1 = data.iloc[:, [5, 6, 7]].to_numpy()
 
 pca = PCA(n_components=2)
 X = pca.fit_transform(X1)
