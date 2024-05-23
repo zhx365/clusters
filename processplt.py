@@ -41,6 +41,5 @@ def plot_clusters(points, labels, centers=None, title='Cluster Visualization'):
     plt.show()
 
 
-plot_clusters(features, np.array(srcd_dbscan_labels), np.array(init_centers), title='Initial Centers for K-means')
 # # 这里labels和centers是srcd_dbscan_kmeans的输出
 plot_clusters(features, srcd_dbscan_kmeans_labels, np.array(centers), title='Final SWO_SRCD_DBSCAN_K-means Clustering Result')
