@@ -40,19 +40,6 @@ def plot_clusters(points, labels, centers=None, title='Cluster Visualization'):
     plt.grid(True)
     plt.show()
 
-# 示例使用
-# points = np.random.rand(100, 2)
-# labels = np.random.randint(0, 5, 100)
-# centers = np.random.rand(5, 2)
-# plot_clusters(points, labels, centers)
-
-
-# 示例使用
-# points = np.random.rand(100, 2)
-# labels = np.random.randint(0, 5, 100)
-# centers = np.random.rand(5, 2)
-# plot_clusters(points, labels, centers)
-
 
 # # 这里labels和centers是srcd_dbscan_kmeans的输出
 plot_clusters(features, srcd_dbscan_kmeans_labels, np.array(centers), title='Final SWO_SRCD_DBSCAN_K-means Clustering Result')
