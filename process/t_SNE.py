@@ -9,7 +9,7 @@ tsne = TSNE(n_components=2, random_state=42)
 
 eps, min_sample = 0.05, 18
 data = pd.read_csv(r"D:\Documents\数据集\车站\车站分类-加上休-线路-处理后.csv")
-features = data.iloc[:, [1, 2, 3, 4, 5, 6, 7]].to_numpy()
+features = data.iloc[:, [1, 2, 3, 4]].to_numpy()
 
 # 对数据进行降维
 tsne_result = tsne.fit_transform(features)

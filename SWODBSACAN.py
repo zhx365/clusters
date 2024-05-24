@@ -5,7 +5,7 @@ from sklearn.cluster import DBSCAN
 from sklearn.decomposition import PCA
 from sklearn.metrics import silhouette_score, calinski_harabasz_score, davies_bouldin_score
 import matplotlib.pyplot as plt
-
+from sklearn.manifold import TSNE
 # 生成示例数据
 # X, _ = make_moons(n_samples=300, noise=0.1, random_state=42)
 
@@ -15,6 +15,9 @@ X1 = data.iloc[:, [1, 2, 3, 4]].to_numpy()
 
 pca = PCA(n_components=2)
 X = pca.fit_transform(X1)
+
+tsne = TSNE(n_components=2, random_state=42)
+
 # SWO优化DBSCAN参数的函数
 def swo_optimize_dbscan(X, num_agents=10, max_iter=50):
     # 初始化eps和min_samples的搜索范围
