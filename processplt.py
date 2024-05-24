@@ -8,7 +8,7 @@ import matplotlib.patches as mpatches
 def jitter(points, jitter_amount=0.001):
     return points + np.random.normal(0, jitter_amount, points.shape)
 
-def plot_clusters(points, labels, centers=None, title='Cluster Visualization'):
+def plot_clusters1(points, labels, centers=None, title='Cluster Visualization'):
     plt.figure(figsize=(12, 8), dpi=150)
     unique_label = set(labels)
     colors = plt.cm.get_cmap('tab20', len(unique_label))
@@ -40,6 +40,33 @@ def plot_clusters(points, labels, centers=None, title='Cluster Visualization'):
     plt.grid(True)
     plt.show()
 
+def plot_clusters(points, labels, centers=None, title='Cluster Visualization'):
+    plt.figure(figsize=(12, 8), dpi=150)  # 增加分辨率
+    unique_label = set(labels)
+    colors = plt.cm.get_cmap('tab20', len(unique_label))
+    markers = ['o', 's', 'D', '^', 'v', '>', '<', 'p', 'H', '*', 'X']
+
+    for k in unique_label:
+        if k == -2:
+            col = 'k'  # 使用黑色表示噪声
+            marker = 'x'
+        else:
+            col = colors(k)
+            marker = markers[k % len(markers)]
+
+        class_member_mask = (labels == k)
+        xy = points[class_member_mask]
+        plt.scatter(xy[:, 0], xy[:, 1], c=[col], marker=marker, label=f'Cluster {k+1}' if k != -2 else 'Noise', edgecolor='k', s=100)
+
+    if centers is not None:
+        plt.scatter(centers[:, 0], centers[:, 1], s=300, c='k', alpha=0.6, edgecolor='red', linewidth=2)
+        for i, center in enumerate(centers):
+            plt.text(center[0], center[1], str(i), color='red', fontsize=14)
+
+    plt.title(title)
+    plt.legend(loc='best', markerscale=1.5)
+    plt.grid(True)
+    plt.show()
 
 # # 这里labels和centers是srcd_dbscan_kmeans的输出
 plot_clusters(features, srcd_dbscan_kmeans_labels, np.array(centers), title='Final SWO_SRCD_DBSCAN_K-means Clustering Result')
