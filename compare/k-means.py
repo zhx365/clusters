@@ -21,7 +21,7 @@ kmeans_labels = kmeans.fit_predict(X=features)
 
 SCS, CHI, DBI = metrics(X=features, labels=kmeans_labels)
 
-print(f"SCS:{SCS}\nCHI:{CHI}\nDBI:{DBI}")
+print(f"SCS:{SCS:.3f}\nCHI:{CHI:.3f}\nDBI:{DBI:.3f}")
 
 
 
